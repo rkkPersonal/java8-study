@@ -31,6 +31,7 @@ public class StreamDemo {
 
     public static void main(String[] args) {
 
+        userList.sort((s,s1)->s.getAge().compareTo(s1.getAge()));
 
         ArrayList<Integer> collect = normalList.stream().collect(Collectors.toCollection(ArrayList::new));
 
