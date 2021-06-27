@@ -49,7 +49,9 @@ public class StreamDemo {
         LinkedList<User> distinctList2 = userList.stream()
                 .collect(
                         Collectors.collectingAndThen(
-                                Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(o -> o.getAge() + ";" + o.getName()))), LinkedList::new
+                                Collectors.toCollection(
+                                        () -> new TreeSet<>(Comparator.comparing(o -> o.getAge() + ";" + o.getName()))
+                                ), LinkedList::new
                         )
                 );
 
